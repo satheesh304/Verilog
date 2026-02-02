@@ -1,0 +1,18 @@
+//Testbench
+module tb_add_sub;
+reg [3:0] a,b;
+reg mode;
+wire [3:0] sum;
+wire carry;
+
+  add_sub a1(a,b,mode,sum,carry);
+
+initial begin
+a=4'b0101; b=4'b0011; mode=0;         // ADD
+  $monitor("Time=%t || A=%b B=%b ||MODE=%b|| Sum=%b Carry=%b",$time,a,b,mode,sum,carry);
+#10 mode=1;                           // SUB
+#10 a=4'b1000; b=4'b0010; mode=0;     // ADD
+#10 mode=1;                           // SUB
+#10 $stop;
+end
+endmodule
