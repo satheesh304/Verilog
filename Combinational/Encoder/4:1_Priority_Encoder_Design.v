@@ -1,4 +1,4 @@
-module Encoder(a,o);
+module Priority_Encoder(a,o);
   input [3:0] a;
   output [1:0] o;
   
