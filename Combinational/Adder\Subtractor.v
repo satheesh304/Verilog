@@ -2,20 +2,12 @@ module add/sub(a, b, cin,mode,sum,carry);
 output [3:0] sum;
 output carry;
 input [3:0] a,b;
-input mode,cin;
+input mode;
 
   wire [3:0] new_b;
   wire c1,c2,c3;
 
 assign new_b1 = b ^ {4{mode}};
-  initial begin
-  for (int i;i<4;i++) begin
-    full_adder f(1'b0,new_b1[i],mode,new_b2[i],c1);
-    full_adder f1(1'b0,new_b1[i],c1,new_b2[i],c2);
-    full_adder f2(1'b0,new_b1[i],c2,new_b2[i],c3);
-    full_adder f3(1'b0,new_b1[i],c3,new_b2[i],carry);
-  end
-  end
   
   full_adder f0(a[0],new_b[0],cin,sum[0],c1);
   full_adder f1(a[1],new_b[1],c1,sum[1],c2);
