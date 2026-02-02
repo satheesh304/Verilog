@@ -1,11 +1,14 @@
 module and_sw(output y, input a, b);
 supply1 vdd; supply0 gnd;
-wire w;
+wire w,y1;
 
-pmos p1(y,vdd, a);
-pmos p2(y,vdd, b);
-nmos n1(y, w, a);
-nmos n2(w, gnd, b);
+    pmos p1(y1,vdd, a);
+    pmos p2(y1,vdd, b);
+    nmos n1(y1, w, a);
+    nmos n2(w, gnd, b);
+    
+    pmos p1(y,vdd, y1);
+    nmos n2(y, gnd, y1);
 
 endmodule
 
