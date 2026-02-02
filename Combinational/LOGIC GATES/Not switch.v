@@ -14,6 +14,7 @@ wire y;
 not_sw g1(y,a);
 initial begin
 a=0;
+  $monitor($time,"\tA=%b\t ||\tOUTPUT=%b",a,y);
 #1 a=1;
 #1 a=0;
 #1 $stop;
