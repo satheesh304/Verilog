@@ -1,7 +1,7 @@
 module Decoder_Tb();
   reg [1:0] a;
   wire [3:0] o;
-Decode d1(a,o);
+Decoder d1(a,o);
   
   initial begin
     a=2'b01;
