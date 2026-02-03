@@ -1,5 +1,5 @@
 //Testbench
-module tb_add_sub;
+module tb_ripple_add;
 reg [3:0] a,b;
 reg cin;
 wire [4:0] sum;
