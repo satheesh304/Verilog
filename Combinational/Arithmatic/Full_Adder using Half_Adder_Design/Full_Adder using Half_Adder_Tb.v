@@ -3,7 +3,7 @@ module tb_full;
 reg a,b,cin;
 wire sum,carry;
 
-full_adder f1(sum,carry,a,b,cin);
+  FA_U_HA f1(a,b,cin,sum,carry);
 
 initial begin
 a=0;b=0;cin=0;
