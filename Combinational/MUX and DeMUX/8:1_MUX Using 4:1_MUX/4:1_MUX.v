@@ -1,4 +1,4 @@
-module MUX(a,s1,s2,out);
+module MUX_4X1 (a,s1,s2,out);
 output out;
 input [3:0] a;
 input s1,s2;
