@@ -1,11 +1,16 @@
 module Encoder(a,o);
-  input [3:0] a;
-  output [1:0] o;
+  input [7:0] a;
+  output [2:0] o;
   
-  assign o = (a[0]) ? 2'b00 :         //assign o[1]=a[3] |a[2] ;   
-           (a[1]) ? 2'b01 :           //assign o[0]=a[2]|a[1];
-           (a[2]) ? 2'b10 :
-           (a[3]) ? 2'b11 :
-            2'b00;
+  assign o = (a[0]) ? 3'b000 :        
+    (a[1]) ? 3'b001 :          
+    (a[2]) ? 3'b010 :
+    (a[3]) ? 3'b011 :
+    (a[4]) ? 3'b100 :        
+    (a[5]) ? 3'b101 :          
+    (a[6]) ? 3'b110 :
+    (a[7]) ? 3'b111 :
+             3'b000;
+           
 
 endmodule
