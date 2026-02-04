@@ -1,10 +1,10 @@
 
-module tb_MUX_4x1;
+module tb_DeMUX_4x1;
 reg  a;
 reg s1,s2;
 wire [3:0] out;
 
-   MUX_4x1 m1 (a,s1,s2,out);
+   DeMUX_4x1 m1 (a,s1,s2,out);
   
 initial begin
   a=1'b1; s1=0; s2=0;
@@ -21,4 +21,3 @@ initial begin
     $finish;
   end
 endmodule
-
