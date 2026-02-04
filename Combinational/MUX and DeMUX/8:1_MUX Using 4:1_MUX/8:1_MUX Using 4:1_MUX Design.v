@@ -2,21 +2,6 @@
 `include 4:1_MUX.v
 
 
-
-
-
-module MUX_2X1 (a,s1,out);
-output out;
-input [1:0] a;
-input s1;
-  
-  assign out = (s1==0) ? a[0] :a[1];
-  //assign out = (s1==0)?((s2==0?a[0]:a[1])):((s2==0?a[2]:a[3]));
-endmodule
-
-
-
-
 module MUX(a,s1,s2,s3,out);
 output out;
 input [7:0] a;
