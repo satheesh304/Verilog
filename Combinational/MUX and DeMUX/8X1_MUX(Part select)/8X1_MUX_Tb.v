@@ -1,23 +1,21 @@
-
 module tb_MUX;
   reg [7:0] a;
-reg s1,s2,s3;
+  reg [2:0] s;
 wire out;
 
-  MUX m1 (a,s1,s2,s3,out);
+  mux m1 (a,s,out);
   
 initial begin
-  a=8'b11001101; s1=0; s2=0; s3=0;
-  $monitor("TIME=%t ||  A=%b ||  s1=%b  s2=%b s3=%b|| output=%b",$time,a,s1,s2,s3,out);
- 
- 
-  #10 s1=0; s2=0; s3=1;
-  #10 s1=0; s2=1; s3=0;
-  #10 s1=0; s2=1; s3=1;
-  #10 s1=1; s2=0; s3=0;
-  #10 s1=1; s2=0; s3=1;
-  #10 s1=1; s2=1; s3=0;
-  #10 s1=1; s2=1; s3=1;
+  a=8'b11001101;  s=3'b000;
+  $monitor("TIME=%t ||  A=%b ||  s=%b || output=%b",$time,a,s,out);
+
+  #10 s=3'b001;
+  #10 s=3'b010;
+  #10 s=3'b011;
+  #10 s=3'b100;
+  #10 s=3'b101;
+  #10 s=3'b110;
+  #10 s=3'b111;
   end
   
   initial begin
