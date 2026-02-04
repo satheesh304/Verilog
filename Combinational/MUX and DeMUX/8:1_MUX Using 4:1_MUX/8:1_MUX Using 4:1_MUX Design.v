@@ -1,5 +1,5 @@
-`include 2:1_MUX.v
-`include 4:1_MUX.v
+`include "2:1_MUX.v"
+`include "4:1_MUX.v"
 
 
 module MUX(a,s1,s2,s3,out);
