@@ -3,7 +3,7 @@ module Even_Par_Gen_tb();
   wire  Ep;
   integer i;
   
-Even_Par_Gen op1(Data,Op);
+  Even_Par_Gen op1(Data,Ep);
   
   initial begin
     $monitor($time,"\tA=%b\t||\tEven_Parity=%b",Data,Ep);
