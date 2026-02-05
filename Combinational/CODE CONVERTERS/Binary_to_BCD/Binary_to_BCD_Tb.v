@@ -7,7 +7,7 @@ module Binary_to_BCD_Tb;
   
   initial begin
  
-    
+    //$monitor($time,"\tA=%b\t||\tOUTPUT=%b  %b  %b  %b",a,o[3],o[2],o[1],o[0]);
     for(i=0;i<50;i=i+1)
       begin
          $display($time,"\tA=%b\t||\tOUTPUT=%b  %b  %b  %b",a,o[3],o[2],o[1],o[0]);
