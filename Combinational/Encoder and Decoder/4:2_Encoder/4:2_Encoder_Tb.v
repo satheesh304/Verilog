@@ -1,14 +1,11 @@
-module Encoder_tb();
-  reg [3:0] a;
-  wire [1:0] o;
+module Encoder(a,o);
+  input [3:0] a;
+  output [1:0] o;
   
-Encoder e1(a,o);
-  
-  initial begin
-    a=4'b0001;
-    $monitor($time,"\tA=%b\t||\tOUTPUT=%b",a,o);
-   #5 a=4'b0010;
-   #5 a=4'b0100;
-   #5 a=4'b1000;
-  end
+  assign o = (a==4'b0001) ? 2'b00 :         //assign o[1]=a[3] |a[2] ;   
+             (a==4'b0010) ? 2'b01 :           //assign o[0]=a[2]|a[1];
+             (a==4'b0100) ? 2'b10 :
+             (a==4'b1000) ? 2'b11 :
+                             2'bxx;
+ 
 endmodule
