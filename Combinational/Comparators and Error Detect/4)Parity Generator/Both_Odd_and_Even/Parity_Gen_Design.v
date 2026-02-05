@@ -1,4 +1,4 @@
-module Even_Par_Gen(Data,Ep,Op);
+module Odd-Even_Par_Gen(Data,Ep,Op);
   input [3:0] Data;
   output reg Ep,Op ;
   
