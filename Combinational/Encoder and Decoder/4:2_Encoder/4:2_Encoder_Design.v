@@ -6,6 +6,6 @@ module Encoder(a,o);
            (a[1]) ? 2'b01 :           //assign o[0]=a[2]|a[1];
            (a[2]) ? 2'b10 :
            (a[3]) ? 2'b11 :
-            2'b00;
+            2'bxx;
 
 endmodule
