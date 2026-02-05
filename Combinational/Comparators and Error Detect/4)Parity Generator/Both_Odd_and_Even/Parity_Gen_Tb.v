@@ -1,9 +1,9 @@
-module Odd-Even_Par_Gen_tb();
+module OddEven_Par_Gen_tb();
   reg [3:0] Data;
   wire  Ep,Op;
   integer i;
   
-  Odd-Even_Par_Gen oep1(Data,Ep,Op);
+  OddEven_Par_Gen oep1(Data,Ep,Op);
   
   initial begin
     $monitor($time,"\tA=%b\t||\tEven_Parity=%b\t||\tOdd_Parity=%b",Data,Ep,Op);
