@@ -20,7 +20,13 @@ module Dff_TB();
   initial begin
     $monitor($time,
       "\tD=%b\tClock=%b\tReset=%b\tQ=%b", d, clk, rst, q);
-    #2000 $finish;
+  
+  end
+  initial begin
+    $dumpfile("D_ff.vcd");
+    $dumpvars;
+    #1000
+    $finish;
   end
 
 endmodule
