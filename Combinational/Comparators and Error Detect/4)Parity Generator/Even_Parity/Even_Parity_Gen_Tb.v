@@ -14,7 +14,7 @@ module Even_Par_Gen_tb();
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("Gen.vcd");
     $dumpvars;
     #1000
     $finish;
