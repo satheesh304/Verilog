@@ -15,7 +15,7 @@ module Binary_to_Gray_Tb;
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("btg.vcd");
     $dumpvars;
     #1000
     $finish;
