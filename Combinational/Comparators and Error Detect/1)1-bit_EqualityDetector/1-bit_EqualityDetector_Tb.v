@@ -20,7 +20,7 @@ module equality_Tb;
     end
   end
   initial begin
-    $dumpfile("mux.vcd");
+    $dumpfile("equality.vcd");
     $dumpvars;
     #1000
     $finish;
