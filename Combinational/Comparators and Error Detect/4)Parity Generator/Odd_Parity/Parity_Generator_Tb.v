@@ -14,7 +14,7 @@ Odd_Par_Gen op1(Data,Op);
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("Gen.vcd");
     $dumpvars;
     #1000
     $finish;
