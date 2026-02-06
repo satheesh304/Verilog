@@ -24,7 +24,7 @@ module equality_Tb;
     end
   end
   initial begin
-    $dumpfile("mux.vcd");
+    $dumpfile("4comp.vcd");
     $dumpvars;
     #1000
     $finish;
