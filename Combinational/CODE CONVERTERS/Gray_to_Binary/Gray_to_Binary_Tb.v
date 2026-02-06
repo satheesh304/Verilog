@@ -16,7 +16,7 @@ module Gray_to_Binary_Tb;
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("gtb.vcd");
     $dumpvars;
     #1000
     $finish;
