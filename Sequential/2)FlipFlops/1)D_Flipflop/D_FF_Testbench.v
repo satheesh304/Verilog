@@ -9,11 +9,12 @@ module Dff_TB();
     clk = 0;
     d   = 0;
     rst = 1;
-    forever #10 d = ~d;
-    #10 rst = 0;
-    #10 rst=1;
+   
+    #5  d   = 1;rst = 0;
+    #45 rst=1;
+    #5  d   = 1;rst=0;
     #5 rst=0;
-    #5 rst=1;
+     forever #50 d = ~d;
      
   end
 
