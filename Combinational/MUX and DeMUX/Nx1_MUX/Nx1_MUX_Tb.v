@@ -17,7 +17,7 @@ initial begin
 
   
   initial begin
-    $dumpfile("mux.vcd");
+    $dumpfile("dmux.vcd");
     $dumpvars;
     #1000
     $finish;
