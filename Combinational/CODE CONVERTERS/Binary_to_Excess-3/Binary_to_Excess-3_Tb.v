@@ -15,7 +15,7 @@ module Binary_EX3_tb;
     end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("bte3.vcd");
     $dumpvars;
     #1000
     $finish;
