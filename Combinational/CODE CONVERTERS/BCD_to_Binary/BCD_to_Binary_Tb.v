@@ -18,7 +18,7 @@ module Binary_to_BCD_Tb;
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("BCDtb.vcd");
     $dumpvars;
     #1000
     $finish;
