@@ -20,7 +20,7 @@ module Odd_Par_CHECK_tb();
       end
   end
    initial begin
-    $dumpfile("mux.vcd");
+     $dumpfile("check.vcd");
     $dumpvars;
     #1000
     $finish;
