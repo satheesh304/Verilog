@@ -24,7 +24,7 @@ module Compare_Bitwise_Tb;
     end
   end
   initial begin
-    $dumpfile("mux.vcd");
+    $dumpfile("bit_comp.vcd");
     $dumpvars;
     #1000
     $finish;
