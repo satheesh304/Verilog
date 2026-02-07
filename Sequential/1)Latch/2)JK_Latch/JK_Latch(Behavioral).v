@@ -1,4 +1,4 @@
-module JK_latch_rst(input J,K,reset, output reg Q,output Qb);
+module JK_latch(input J,K,reset, output reg Q,output Qb);
   
   always @(*) begin
     if (reset)
