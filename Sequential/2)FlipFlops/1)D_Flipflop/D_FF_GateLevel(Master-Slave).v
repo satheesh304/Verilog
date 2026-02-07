@@ -1,4 +1,4 @@
-module D_ff_rst(input D, clk, reset, output Q, Qb);
+module d_ff(input D, clk, reset, output Q, Qb);
   wire Dn;
   wire Sm, Rm;
   wire Qm, Qmb;
