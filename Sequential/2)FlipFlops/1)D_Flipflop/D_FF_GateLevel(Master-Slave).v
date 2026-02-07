@@ -1,18 +1,22 @@
-module D_ff(input D, clk, output Q, Qb);
+module D_ff_rst(input D, clk, reset, output Q, Qb);
   wire Dn;
-  wire Sm, Rm;     // master S,R
-  wire Qm, Qmb;  
-  wire Ss, Rs;    // slave S,R
-
+  wire Sm, Rm;
+  wire Qm, Qmb;
+  wire Ss, Rs;
+//Asynchronous rest
   not  (Dn, D);
-  //Master 
+
+  // Master
   nand (Sm, D,  clk);
   nand (Rm, Dn, clk);
   nand (Qm,  Sm, Qmb);
   nand (Qmb, Rm, Qm);
-  //Slave
+
+  // Slave
   nand (Ss, Qm,  ~clk);
   nand (Rs, Qmb, ~clk);
-  nand (Q,  Ss, Qb);
-  nand (Qb, Rs, Q);
+
+  //Output
+  nand (Q,  Ss, Qb, reset);
+  nand (Qb, Rs, Q,  reset);
 endmodule
