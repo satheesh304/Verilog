@@ -13,6 +13,6 @@ module SR_latch_TB();
   end
   initial begin
     $dumpfile("SR_latch.vcd");
-    $dumpverse;
+    $dumpvars;
     #200; $finish;
 endmodule
