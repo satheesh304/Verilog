@@ -1,9 +1,15 @@
 module JK_ff(input J, K, clk, reset, output Q, Qb);
-  wire S, R;
-//Asynchronous Reset
-  nand (S, J, Qb, clk);
-  nand (R, K, Q,  clk);
+  //Asynchronous reset
+  wire Sm, Rm;
+  wire Qm, Qmb;
 
-  nand (Q,  S, Qb, reset);
-  nand (Qb, R, Q,  reset);
+  // Master latch
+  nand (Sm, J, Qb, clk);
+  nand (Rm, K, Q,  clk);
+  nand (Qm,  Sm, Qmb);
+  nand (Qmb, Rm, Qm);
+
+  // Slave latch with reset
+  nand (Q,  Qm,  ~clk, Qb, reset);
+  nand (Qb, Qmb, ~clk, Q,  reset);
 endmodule
