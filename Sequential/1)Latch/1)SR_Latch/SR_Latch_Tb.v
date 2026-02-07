@@ -11,4 +11,8 @@ module SR_latch_TB();
     #5 set=0; rst=0;
     #5 set=1; rst=1;
   end
+  initial begin
+    $dumpfile("SR_latch.vcd");
+    $dumpverse;
+    #200; $finish;
 endmodule
