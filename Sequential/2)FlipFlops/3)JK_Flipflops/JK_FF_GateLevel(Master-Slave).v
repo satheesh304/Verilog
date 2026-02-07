@@ -1,6 +1,6 @@
 module JK_ff(input J, K, clk, reset, output Q, Qb);
   wire S, R;
-
+//Asynchronous Reset
   nand (S, J, Qb, clk);
   nand (R, K, Q,  clk);
 
