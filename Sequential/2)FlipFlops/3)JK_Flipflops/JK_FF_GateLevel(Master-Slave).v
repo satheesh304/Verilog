@@ -10,6 +10,8 @@ module JK_ff(input J, K, clk, reset, output Q, Qb);
   nand (Qmb, Rm, Qm);
 
   // Slave latch with reset
-  nand (Q,  Qm,  ~clk, Qb, reset);
-  nand (Qb, Qmb, ~clk, Q,  reset);
+  nand (Ss, Qm, ~clk);
+  nand (Rs, Qmb ,~clk);
+  nand (Q, Ss ,Qb, reset);
+  nand (Qb,Rs,  Q,  reset);
 endmodule
