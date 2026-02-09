@@ -2,7 +2,7 @@ module JK_latch(input J,K,reset,clk, output reg Q,output Qb);
   
   always @(*) begin
     if (reset)
-      Q = 0;
+      Q <= 0;
     else if(clk) begin
       case ({J,K})
         2'b00: Q<=Q;     // hold
