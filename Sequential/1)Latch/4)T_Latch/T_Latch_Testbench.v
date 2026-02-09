@@ -2,7 +2,7 @@ module T_latch_tb;
   wire q, qb;
   reg  T, reset, clk;
 
-  T_latch d1(T, clk, reset, q);
+  T_latch t1(T, clk, reset, q);
   
   always #5 clk = ~clk;
 
@@ -12,6 +12,7 @@ module T_latch_tb;
 
     
     reset = 1; T = 0;
+    #10 reset = 1;
     #10 reset = 0;
 
     
