@@ -1,4 +1,4 @@
-module D_latch(input T,clk,reset,output reg q);
+module T_latch(input T,clk,reset,output reg q);
   always @(clk or d or reset) begin
     if (reset)
       q<=0;
