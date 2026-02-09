@@ -1,6 +1,6 @@
 `include "t_ff.v"
 module counter(T,clk,rst,Q);
-  input clk,rst;
+  input T,clk,rst;
   output reg [3:0] Q;
   
   t_ff T0(T,clk,rst,Q[0]);
