@@ -1,4 +1,4 @@
-module JK_latch(input D,clk, reset, output Q, Qb);
+module D_latch(input D,clk, reset, output Q, Qb);
   wire S, R,Dn;
   not(Dn,D);
   nand (S, D, Qb,clk);
