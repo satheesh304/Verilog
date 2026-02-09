@@ -1,30 +1,37 @@
-module JK_latch_tb;
+module D_latch_tb;
   wire q, qb;
-  reg  d,reset,clk;
+  reg  d, reset, clk;
 
-  D_latch jk1(d,clk, reset,q,qb);
+  D_latch d1(d, clk, reset, q);
   
-always #5 clk=~clk;
+  always #5 clk = ~clk;
+
   initial begin
-    clk=0;
-    $monitor($time,"\td=%b\tQ=%b", d, q);
-    reset=1;  
-    d=1; 
-    #5reset=0;
-    #5 d=0;   
-    #5 d=0;  
-   
-    #5 d=1;  
-    #5reset=0;
-    #5 d=1; 
-    #5 d=1;
+    clk = 0;
+    $monitor($time,"\td=%b\treset=%b\tclk=%b\tQ=%b", d, reset, clk, q);
+
+    
+    reset = 1; d = 0;
+    #10 reset = 0;
+
+    
+    #10 d = 1;  
+    #10 d = 0; 
+    #10 d = 1;
+    #10 d = 1;   
+    #10 d = 0;  
+    #10 d = 0;   
+    #10 d = 1;  
+    #10 d = 0;   
+    #10 d = 1;   
+    #10 d = 0;   
+    #10 d = 1;  
+    #10 d = 0;   
   end
 
   initial begin
-    $dumpfile("JK_latch.vcd");
+    $dumpfile("D_latch.vcd");
     $dumpvars;
     #200 $finish;
   end
 endmodule
-
-
