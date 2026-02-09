@@ -23,4 +23,3 @@ module SR_latch_tb;
     #200 $finish;
   end
 endmodule
-
