@@ -1,4 +1,5 @@
 `include "t_ff.v"
+//DOWN COUNTER with Posedge TRiggered clock
 module counter(T,clk,rst,Q);
   input T,clk,rst;
   output reg [3:0] Q;
