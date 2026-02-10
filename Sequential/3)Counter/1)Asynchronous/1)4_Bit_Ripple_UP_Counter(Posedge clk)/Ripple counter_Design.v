@@ -1,3 +1,5 @@
+
+//UP counter with posedge triggered clock
 module Ripplecounter_4bit(clk,rst,Q);
   input clk,rst;
   output [3:0] Q;
