@@ -1,8 +1,8 @@
 module Counter_Tb();
-  reg clk,rst,t;
+  reg clk,rst,t; //reg clk,rst;
   wire [3:0] Q;
   
-  JOHNSON_gate r1(t,clk,rst,Q);
+  JOHNSON_gate r1(t,clk,rst,Q);   //JOHNSON_gate r1(clk,rst,Q);
    
  initial clk=1'b1;
  always 
