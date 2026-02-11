@@ -13,5 +13,5 @@ module T_ff(input T, clk, reset, output Q, Qb);
   nand (Ss, Qm, ~clk);
   nand (Rs, Qmb, ~clk);
   nand (Q,Ss, Qb, reset);
-  nand (Qb,Rs, Q,  reset);
+  nand (Qb,Rs, Q);
 endmodule
