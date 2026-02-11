@@ -18,5 +18,5 @@ module d_ff(input D, clk, reset, output Q, Qb);
 
   //Output
   nand (Q,  Ss, Qb, reset);
-  nand (Qb, Rs, Q,  reset);
+  nand (Qb, Rs, Q);
 endmodule
