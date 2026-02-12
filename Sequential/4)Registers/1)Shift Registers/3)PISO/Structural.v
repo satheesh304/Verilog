@@ -1,4 +1,4 @@
-//left right shift
+//left shift
 
 //BOTTOM MODULE
 module d_ff(input d,clk,rst,output reg q );
