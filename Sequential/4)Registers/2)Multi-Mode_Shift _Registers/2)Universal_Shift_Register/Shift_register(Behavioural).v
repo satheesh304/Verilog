@@ -1,6 +1,6 @@
 //Universal Shift Register
-module Universal_Shift_Register(input [3:0] Data_in,input [2:0]MODE,
-                                input clk,rst,output reg serial_Q ,
+module Universal_Shift_Register(input [3:0] parallel_in,input [2:0]MODE,
+                                input serial_in,clk,rst,output reg serial_Q ,
                                 output reg [3:0] parallel_Q);
   reg [3:0] q_temp;
   always @(posedge clk)begin
@@ -15,15 +15,15 @@ module Universal_Shift_Register(input [3:0] Data_in,input [2:0]MODE,
           serial_Q<=q_temp[3];
           end
         1:begin 
-          q_temp<={1'b0,q_temp[3:1]};
+          q_temp<={serial_in,q_temp[3:1]};
           serial_Q<=q_temp[0];
           end                            //MODE=0 =>NO change
         2:begin                          //MODE=1 =>SHIFT RIGHT
-          q_temp<={q_temp[2:0],1'b0};    //MODE=2 =>Left shift
+          q_temp<={q_temp[2:0],serial_in};    //MODE=2 =>Left shift
           serial_Q<=q_temp[3];           //MODE=3 =>PARALLEL LOAD
           end                            //Default => Parallel OUT
          3: begin
-            q_temp<=Data_in;
+            q_temp<=parallel_in;
             serial_Q<=q_temp[3];
           end
         default:begin
