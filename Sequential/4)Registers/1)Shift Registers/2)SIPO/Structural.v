@@ -1,4 +1,6 @@
 //left right shift
+
+//BOTTOM MODULE
 module d_ff(input d,clk,rst, preset,output reg q );
   always @(posedge clk) begin
     if (rst)
@@ -9,7 +11,8 @@ module d_ff(input d,clk,rst, preset,output reg q );
       q<=d;
    end
 endmodule
-module SISO(input Data_in, input clk,rst,preset,output [3:0] Q );
+//TOP MODULE
+module SIPO(input Data_in, input clk,rst,preset,output [3:0] Q );
   d_ff df1(Data_in,clk,rst,preset,Q[0]);
   d_ff df2(Q[0],clk,rst,preset,Q[1]);
   d_ff df3(Q[1],clk,rst,preset,Q[2]);
@@ -25,7 +28,7 @@ module SHIFTREGISTER_Tb();
   reg Data,clk,rst,preset;
   wire [3:0] Q;
   
-  SISO r1(Data,clk,rst,preset,Q);
+  SIPO r1(Data,clk,rst,preset,Q);
    
  initial clk=1'b1;
  always 
