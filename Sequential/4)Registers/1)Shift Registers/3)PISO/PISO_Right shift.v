@@ -1,4 +1,4 @@
-//Right right shift
+//Right  shift
 module PISO #(parameter N=4)(input [N-1:0]Data_in,input load, clk,rst,output reg Q );
   reg [N-1:0]Q_temp;
   always @(posedge clk)begin
