@@ -10,7 +10,7 @@ module PISO #(parameter N=4)(input [N-1:0]Data_in,input load, clk,rst,output reg
      Q_temp<=Data_in;
     else begin
       Q_temp<={1'B0,Q_temp[N-1:1]};
-      Q<=Q_temp[N-0];
+      Q<=Q_temp[0];
     end
   end
 endmodule
