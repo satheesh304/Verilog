@@ -21,7 +21,7 @@ module seq_detect(input Data_in,clk,rst,output reg out);
         S1: next=Data_in?S2:S1; 
         S2: next=Data_in?S2:S3; 
         S3: next=Data_in?S4:S1;  
-        S4: next=Data_in?S1:S1;
+        S4: next=Data_in?S1:S3;
         default:next=S1;
     endcase
   end
