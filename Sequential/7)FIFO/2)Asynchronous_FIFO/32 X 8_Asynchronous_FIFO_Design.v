@@ -1,5 +1,9 @@
 //DESIGN OF 32 X 8 BITS (32 Bytes) Asynchronous FIFO
 
+
+
+                              ///****UNDER CONSTRUCTION****\\\
+
 module Async_FIFO #(parameter W=8,D=32)(w_clk,r_clk,r_rst,w_rst,w_en,r_en,d_in,d_out,full,empty);
   
   input w_clk,r_clk,r_rst,w_rst,w_en,r_en;
